@@ -1,4 +1,4 @@
-import 'package:ecommerce/create_new_password.dart';
+import 'package:ecommerce/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +17,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ChangedPassword(),
+      home: HomeScreen(),
     );
   }
 }
