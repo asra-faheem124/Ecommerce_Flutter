@@ -1,4 +1,5 @@
 import 'package:ecommerce/constants.dart';
+import 'package:ecommerce/login.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -92,7 +93,7 @@ class _SignUpState extends State<SignUp> {
                             fontFamily: 'ProductSans',
                           ),
                         ),
-                        SizedBox(height: 30,),
+                        SizedBox(height: 30),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -101,7 +102,7 @@ class _SignUpState extends State<SignUp> {
                               child: FaIcon(
                                 FontAwesomeIcons.apple,
                                 size: 40,
-                                color: Color(0xff2D201C),
+                                color: AppStyles.themeColor,
                               ),
                             ),
                             SizedBox(width: 10),
@@ -110,7 +111,7 @@ class _SignUpState extends State<SignUp> {
                               child: FaIcon(
                                 FontAwesomeIcons.google,
                                 size: 40,
-                                color: Color(0xff2D201C),
+                                color: AppStyles.themeColor,
                               ),
                             ),
                             SizedBox(width: 10),
@@ -119,13 +120,44 @@ class _SignUpState extends State<SignUp> {
                               child: FaIcon(
                                 FontAwesomeIcons.facebook,
                                 size: 40,
-                                color: Color(0xff2D201C),
+                                color: AppStyles.themeColor,
                               ),
                             ),
                           ],
                         ),
-                        SizedBox(height: 30,),
-                        Text('Already have an account? Login', style: TextStyle(fontFamily: 'ProductSans', fontSize: 14),)
+                        SizedBox(height: 30),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Already have an account?',
+                              style: TextStyle(
+                                fontFamily: 'ProductSans',
+                                fontSize: 14,
+                              ),
+                            ),
+                            TextButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return Login();
+                                    },
+                                  ),
+                                );
+                              },
+                              child: Text(
+                                'Login',
+                                style: TextStyle(
+                                  fontFamily: 'ProductSans',
+                                  fontSize: 14,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ],
                     ),
                   ),

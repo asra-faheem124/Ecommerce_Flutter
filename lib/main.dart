@@ -1,4 +1,5 @@
 import 'package:ecommerce/home.dart';
+import 'package:ecommerce/splash.dart';
 import 'package:flutter/material.dart';
 
 void main() {

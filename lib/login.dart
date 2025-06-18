@@ -1,4 +1,5 @@
 import 'package:ecommerce/forgot.dart';
+import 'package:ecommerce/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:ecommerce/constants.dart';
@@ -88,7 +89,7 @@ class Login extends StatelessWidget {
                               child: FaIcon(
                                 FontAwesomeIcons.apple,
                                 size: 40,
-                                color: Color(0xff2D201C),
+                                color: AppStyles.themeColor
                               ),
                             ),
                             SizedBox(width: 10),
@@ -97,7 +98,7 @@ class Login extends StatelessWidget {
                               child: FaIcon(
                                 FontAwesomeIcons.google,
                                 size: 40,
-                                color: Color(0xff2D201C),
+                                color: AppStyles.themeColor
                               ),
                             ),
                             SizedBox(width: 10),
@@ -106,18 +107,43 @@ class Login extends StatelessWidget {
                               child: FaIcon(
                                 FontAwesomeIcons.facebook,
                                 size: 40,
-                                color: Color(0xff2D201C),
+                                color: AppStyles.themeColor
                               ),
                             ),
                           ],
                         ),
                         SizedBox(height: 30),
-                        Text(
-                          "Don't have an account? Signup",
-                          style: TextStyle(
-                            fontFamily: 'ProductSans',
-                            fontSize: 14,
-                          ),
+                     Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Don't have an account?",
+                              style: TextStyle(
+                                fontFamily: 'ProductSans',
+                                fontSize: 14,
+                              ),
+                            ),
+                            TextButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return SignUp();
+                                    },
+                                  ),
+                                );
+                              },
+                              child: Text(
+                                'Signup',
+                                style: TextStyle(
+                                  fontFamily: 'ProductSans',
+                                  fontSize: 14,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),

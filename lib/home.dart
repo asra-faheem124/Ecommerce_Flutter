@@ -1,5 +1,5 @@
+import 'package:ecommerce/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -26,56 +26,90 @@ class HomeScreen extends StatelessWidget {
           children: [
             SizedBox(height: 20,),
             TabBar(
+              labelColor: AppStyles.themeColor,
+              unselectedLabelColor: Colors.grey,
               dividerColor: Colors.transparent,
+              indicatorColor: AppStyles.themeColor,
               tabs: [
                 Tab(
-                 child: Column(
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Color(0xff2D201C),
-                        shape: BoxShape.circle
+                  height: 70,
+                  icon: Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: CircleAvatar(
+                      backgroundColor: AppStyles.themeColor,
+                      child: Icon(
+                        Icons.woman,
+                        size: 30,
+                        color: Colors.white,
                       ),
-                      child: Icon(Icons.woman, size: 30,)),
-                  Text('Women')
-                  ],
-                 ),
-                ),
-                 Tab(
-                  icon: CircleAvatar(
-                    backgroundColor: Color(0xff2D201C),
-                    radius: 30,
-                    child: Icon(
-                      Icons.man,
-                      size: 40,
-                      color: Colors.white,
                     ),
                   ),
+                  text: 'Women',
                 ),
                  Tab(
-                  icon: CircleAvatar(
-                    backgroundColor: Color(0xff2D201C),
-                    radius: 30,
-                    child: Icon(
-                      Icons.design_services,
-                      size: 40,
-                      color: Colors.white,
+                  height: 70,
+                  icon: Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: CircleAvatar(
+                      backgroundColor:AppStyles.themeColor,
+                      child: Icon(
+                        Icons.man,
+                        size: 30,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
+                  text: 'Men',
                 ),
                  Tab(
-                  icon: CircleAvatar(
-                    backgroundColor: Color(0xff2D201C),
-                    radius: 30,
-                    child: Icon(
-                      Icons.auto_awesome_outlined,
-                      size: 40,
-                      color: Colors.white,
+                  height: 70,
+                  icon: Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: CircleAvatar(
+                      backgroundColor:AppStyles.themeColor,
+                      child: Icon(
+                        Icons.design_services,
+                        size: 30,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
+                  text: 'Design'
+                ),
+                 Tab(
+                 height: 70,
+                  icon: Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: CircleAvatar(
+                      backgroundColor: AppStyles.themeColor,
+                      child: Icon(
+                        Icons.auto_awesome,
+                        size: 30,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                  text: 'Beauty'
                 ),
               ],
             ),
+            Expanded(child: TabBarView(children: [
+              Center(
+                  child: Column(
+                    children: [
+                      SizedBox(height: 30,),
+                     Container(
+                      height: 200,
+                      width: 380,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(image: AssetImage('assets/images/home_banner.png'),fit: BoxFit.cover,),
+                        borderRadius: BorderRadius.circular(20)  
+                      ),
+                     )
+                    ],
+                  ),
+                ),
+            ]))
           ],
         ),
       ),

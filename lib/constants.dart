@@ -7,6 +7,8 @@ class AppStyles {
     fontSize: 24,
     fontWeight: FontWeight.bold,
   );
+
+  static Color themeColor = Color(0xff2D201C);
 }
 
 class MyButton extends StatelessWidget {
